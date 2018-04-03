@@ -1,0 +1,19 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~material-design-icons/iconfont/material-icons.css";
+@import './variables';
+@import './mixins';
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -ms-overflow-style: none;
+    overflow: auto;
+  }
+  
+  .mat-progress-spinner svg {
+    width: 30px !important;
+    height: 30px !important;
+  }

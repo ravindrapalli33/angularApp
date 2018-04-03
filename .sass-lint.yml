@@ -1,0 +1,287 @@
+files:
+  include:
+    - 'src/app/*.s+(a|c)ss'
+    - 'scss/**/*.s+(a|c)ss'
+
+options:
+  # Don't merge default rules
+  merge-default-rules: false
+  formatter: stylish
+
+# Rule configuration
+# Detailed rule definitions: https://github.com/sasstools/sass-lint/blob/master/docs/rules/
+rules:
+
+  # Attribute values should use quotes.
+  # Severity: warning
+  attribute-quotes: 1
+
+  # When border is set to zero, 0 should be used.
+  # Severity: warning
+  border-zero: 1
+
+  # Braces should be in "the one true brace style" and don't allow single line
+  # declarations. https://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS
+  # Severity: warning
+  brace-style:
+    - 1
+    - style: 1tbs
+      allow-single-line: false
+
+  # Class names have to be in hyphenated lowercase format.
+  # Severity: warning
+  class-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+
+  # Don't use underscore or filename extensions in @import paths.
+  # Severity: warning
+  clean-import-paths:
+    - 1
+    - filename-extension: false
+      leading-underscore: false
+
+  # Mixins are allowed to not have parenthesis when declared or invoked without arguments.
+  # Severity: warning
+  empty-args: 1
+
+  # Nested blocks have to have newline between them and single line rulesets are not allowed.
+  # Severity: error
+  empty-line-between-blocks:
+    - 2
+    - include: true
+      allow-single-line-rulesets: false
+
+  # Extends have to be written before style declarations in a ruleset.
+  # Severity: error
+  extends-before-declarations: 2
+
+  # Extends have to be written before mixins in a ruleset.
+  # Severity: error
+  extends-before-mixins: 2
+
+  # Files have to end with a newline.
+  # Severity: error
+  final-newline: 2
+
+  # Nesting of attributes is not forced.
+  force-attribute-nesting: 0
+
+  # Nesting of elements is not forced.
+  force-element-nesting: 0
+
+  # Nesting of pseudo-elements is not forced.
+  force-pseudo-nesting: 0
+
+  # Functions names has be in camelCase format.
+  # Severity: error
+  function-name-format:
+    - 2
+    - allow-leading-underscore: false
+      convention: camelcase
+
+  # Hexadecimal values should be in short form (#FFF) when possible.
+  # Severity: warning
+  hex-length: 1
+
+  # Hexadecimal values have to be in uppercase.
+  # Severity: error
+  hex-notation:
+    - 2
+    - style: uppercase
+
+  # ID names have to be in camelCase format.
+  # Severity: warning
+  id-name-format:
+    - 1
+    - allow-leading-underscore: false
+      convention: camelcase
+
+  # Tabs have to be 4 spaces.
+  # Severity: error
+  indentation:
+    - 2
+    - size: 4
+
+  # Decimals have to have leading zeros (0.5em instead of .5em)
+  # Severity: error
+  leading-zero:
+    - 2
+    - include: true
+
+  # Mixin names have to be in hyphenated lowercase format.
+  # Severity: error
+  mixin-name-format:
+    - 2
+    - allow-leading-underscore: false
+      convention: hyphenatedlowercase
+
+  # Mixins have to be written before style declarations in a ruleset.
+  # Severity: error
+  mixins-before-declarations: 2
+
+  # No max depth for nesting,
+  nesting-depth: 0
+
+  # Color literals (grey, white, etc.) are not allowed. Hexadecimal color values must be used.
+  # Severity: error
+  no-color-keywords: 2
+
+  # Color functions are allowed to be used in any declaration. (rgb, darken, etc.)
+  no-color-literals: 0
+
+  # Selector combinators [+, >, ~, .] are allowed.
+  no-combinators: 0
+
+  # Comments have to be written using SASS single-line comments. CSS comments are not allowed.
+  # Severity: error
+  no-css-comments: 2
+
+  # Duplicate poperties in a ruleset are not allowed.
+  # Severity: error
+  no-duplicate-properties:
+    - 2
+    -
+      exclude:
+        - cursor
+
+
+  # Empty rulesets are not allowed.
+  # Severity: warning
+  no-empty-rulesets: 1
+
+  # Extends are allowed.
+  no-extends: 0
+
+  # ID selectors are allowed.
+  no-ids: 0
+
+  # Using !important is allowed.
+  no-important: 0
+
+  # Color hexadecimal values must be valid.
+  # Severity: error
+  no-invalid-hex: 2
+
+  # Duplicate selectors are not allowed. Force to merge them into one definition.
+  # Severity: error
+  no-mergeable-selectors: 2
+
+  # Misspelled properties are not allowed in a ruleset.
+  # Severity: error
+  no-misspelled-properties:
+    - 2
+    - 'extra-properties':
+          - '-webkit-overflow-scrolling'
+          - '-webkit-touch-callout'
+
+
+  # Trailing whitespace is not allowed.
+  # Severity: error
+  no-trailing-whitespace: 2
+
+  # Trailing zeros are not allowed.
+  # Severity: error
+  no-trailing-zero: 2
+
+  # Universal selectors are not allowed to be used.
+  # Severity: error
+  no-universal-selectors : 2
+
+  # Protocols and domains withins URLs are not allowed.
+  # Severity: warning
+  no-url-protocols: 1
+
+  # Vendor prefixes are allowed.
+  no-vendor-prefixes: 0
+
+  # New declarations should begin on a new line.
+  # Severity: warning
+  one-declaration-per-line: 1
+
+  # Extends should only include placeholder selectors.
+  # Severity: warning
+  placeholder-in-extend: 1
+
+  # Placeholders names have to be in hyphenated lowercase format.
+  # Severity: error
+  placeholder-name-format:
+    - 2
+    - allow-leading-underscore: false
+      convention: hyphenatedlowercase
+
+  # Properties are not forced to be sorted.
+  property-sort-order: 0
+
+  # All property units are allowed.
+  property-units: 0
+
+  # Single quotes should be used for all strings.
+  # Severity: warning
+  quotes:
+    - 1
+    - style: single
+
+  # Shorthands should be written concisely with 1, 2 or 4 shorthands.
+  # Severity: warning
+  shorthand-values:
+    - 1
+    - allowed-shorthands:
+        - 1
+        - 2
+
+  # Selectors should be placed on a new line.
+  # Severity: warning
+  single-line-per-selector: 1
+
+  # Allow no spaces after bang (!).
+  space-after-bang: 0
+
+  # After a colon (:) there has to be a space.
+  # Severity: error
+  space-after-colon: 2
+
+  # After comma (,) there has to be a space.
+  # Severity: error
+  space-after-comma: 2
+
+  # Before and after operators [+, -, /, *, %, <, > ==, !=, <=, >=] there has to be a space.
+  # Severity: error
+  space-around-operator: 2
+
+  # Before bang (1) there has to be a space.
+  # Severity: error
+  space-before-bang: 2
+
+  # Before brace there has to be a space.
+  # Severity: error
+  space-before-brace: 2
+
+  # Don't allow space before colon (:).
+  space-before-colon: 0
+
+  # Parenthesis don't have to have spaces around them.
+  space-between-parens: 0
+
+  # Last declaration in block has to also include semicolon (;).
+  # Severity: warning
+  trailing-semicolon: 1
+
+  # URLs have to be wrapped in quotes.
+  # Severity: error
+  url-quotes: 2
+
+  # Properties can have variable as the value.
+  variable-for-property: 0
+
+  # Variable names have to be in huphenated lowercase format.
+  # Severity: error
+  variable-name-format:
+    - 2
+    - allow-leading-underscore: false
+      convention: hyphenatedlowercase
+
+  # Values of 0 should to be unitless
+  # Severity: warning
+  zero-unit: 1
